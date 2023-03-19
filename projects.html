@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Krzysztof Urbisz</title>
+<meta charset="utf-8">
+</head>
+
+<body class="stop-transition-on-load">
+
+	<header>
+
+		<nav>
+			
+			<div class="left-name">
+				<a href="home.html"> <div class="mainpage"> Krzysztof Urbisz </div></a>
+			</div>
+			
+			<div class="right-menu">
+				<a href="home.html"><div class="subpage">O mnie</div></a>
+				<a href="projects.html"><div class="subpage">Projekty</div></a>
+				<a href="https://www.linkedin.com/in/krzysztof-urbisz-741165239/">
+					<div class="subpage linkedin">
+						<img src="linkedin.png">
+					</div>
+				</a>
+				
+				<a href="https://github.com/kurbisz">
+					<div class="subpage github">
+						<img src="github.png">
+					</div>
+				</a>
+			</div>
+			
+			<div class="right-menu-mobile">
+				<input type="checkbox" id="mobile-checkbox"/>
+				
+				<label class="right-menu-mobile-label" for="mobile-checkbox">
+					<div></div>	<div></div>	<div></div>	<div></div>
+				</label>
+				<ul class="right-menu-mobile-ul">
+					<li><a href="home.html">O mnie</a></li>
+					<li><a href="projects.html">Projekty</a></li>
+				</ul>
+				
+				
+			</div>
+				
+		</nav>
+
+
+
+	</header>
+
+	<article>
+		
+		<h1>
+			<div class="main-page-title">
+				Moje projekty
+			</div>
+		</h1>
+		
+		<div class="projects-grid">
+			<div class="projects-grid-div"> 
+				<img src="compiler.png">
+				<h2 class="projects-grid-div-h2"> Kompilator własnego języka</h2>
+				Program przekładający pewien kod na procedury rozumiane przez odpowiednią maszynę. Zawiera on
+				implementację takich funkcji jak mnożenie, dzielenie czy możliwość deklarowania procedur.
+			</div>
+			<div class="projects-grid-div"> 
+				<img src="metaheuristics2.png">
+				<h2 class="projects-grid-div-h2"> Porównanie metaheurystyk przy problemie komiwojażera </h2>
+				Zbiór implementacji algorytmów metaheurystycznych, które pozwalają na ocenę wyników otrzymanych
+				przez każdy z nich. Szukają one najkrótszej ścieżki przechodzącej przez każde z miast tylko&nbsp;1 raz.
+			</div>
+			<div class="projects-grid-div"> 
+				<img src="shop.png">
+				<h2 class="projects-grid-div-h2"> Aplikacja do zarządzania produktami w sklepie </h2>
+				Aplikacja desktopowa współpracująca z bazą danych, która umożliwia operacje typu dodawanie czy usuwanie produktów
+				oraz zarządza dostępem do odpowiednich sektorów w zależności od uprawnień użytkownika.
+			</div>
+			<div class="projects-grid-div"> 
+				<img src="matrix2.png">
+				<h2 class="projects-grid-div-h22"> Rozwiązywanie układów równań dla specyficznych macierzy </h2>
+				Program rozwiązujący dany układ równań liniowych za pomocą metody Gaussa z możliwością użycia rozkładu LU.
+				W celu zwiększenia dokładności umożliwia użycie w algorytmie częściowego wyboru elementu głównego. Fragment
+				kodu dostępny jest 
+				
+				<input type="checkbox" id="code-checkbox" class="code-checkbox-input"/>
+				<label class="open-code-div" for="code-checkbox"> tutaj</label>
+				<div class="open-code">
+					<code class="code-box"> 
+function gauss_elimination_with_main_element(matr)
+    for a in 1:(matr.n)
+        max = a
+        for i in (a + 1):(a + matr.l + 1)
+            if i <= matr.n && 
+                getMinInRow(matr, i) <= a &&
+                abs(getA(matr, i, a)) > abs(getA(matr, max, a))
+                max = i
+            end
+        end
+        if max != a
+            swapRowsInSMatrix(matr, a, max)
+        end
+
+        for i in (a+1):(a + matr.l + 1)
+            if i > matr.n || getMinInRow(matr, i) > a
+                break
+            end
+            if abs(getA(matr, a, a)) < min_val
+                throw("Value at diagonal is close to 0")
+            end
+            mult = getA(matr, i, a) / getA(matr, a, a)
+            setZeroAInSMatrix(matr, i)
+            for j in (a+1):(getMaxInRow(matr, i))
+                setA(matr, i, j, getA(matr, i, j) - mult * getA(matr, a, j))
+            end
+            matr.b[i] -= mult * matr.b[a]
+        end
+    end
+
+    res = zeros(matr.n)
+    for i in (matr.n):-1:1
+        res[i] = matr.b[i]
+        for j in (i+1):(getMaxInRow(matr, i))
+            res[i] -= getA(matr, i, j) * res[j]
+        end
+        res[i] /= getA(matr, i, i)
+    end
+
+    return res
+end
+					</code>
+
+				</div>
+			</div>
+			<div class="projects-grid-div">
+				<img src="queue.png">
+				<h2 class="projects-grid-div-h22"> System kolejkowy do centrum medycznego </h2>
+				Projekt oparty na technologiach webowych odpowiedzialny za przydzielanie numerów pacjentom oraz
+				odpowiednie ich pozycjonowanie&nbsp;i wyświetlanie w poczekalni.
+			</div>
+			<div class="projects-grid-div">
+				<img src="exchange.png">
+				<h2 class="projects-grid-div-h22"> Międzynarodowa strona internetowa do wymiany międzyszkolnej</h2>
+				Responsywna strona odpowiedzialna za informowanie uczniów na temat możliwych wymian pomiędzy szkołami
+				oraz umożliwiająca im kontakt&nbsp;z organizatorami.
+			</div>
+		</div>
+		
+		
+	</article>
+
+	<footer>
+		<div class="footer-contact">
+			<h3> Kontakt </h3>
+			<div> 
+				Email: <a href="mailto:ku.krzysztof.urbisz@gmail.com">ku.krzysztof.urbisz@gmail.com</a><br>
+				LinkedIn: <a href="https://www.linkedin.com/in/krzysztof-urbisz-741165239/">@krzysztof-urbisz-741165239</a>
+			</div>
+		<div>
+	</footer>
+
+<script>document.body.classList.remove('stop-transition-on-load')</script>
+</body>
+
+</html> 

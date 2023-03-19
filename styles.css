@@ -171,6 +171,7 @@ body article {
 	grid-gap: 20px;
 	margin-bottom: 5%;
 	margin-top: 5%;
+	font-size: clamp(12px, 0.82vw, 24px);
 }
 
 .projects-grid > div {

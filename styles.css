@@ -165,6 +165,14 @@ body article {
 	display: none;
 }
 
+.projects-grid-div-h2 {
+	min-height: 15%;
+}
+
+.projects-grid-div-h22 {
+	min-height: 11vh;
+}
+
 .projects-grid {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
@@ -174,7 +182,7 @@ body article {
 	font-size: clamp(12px, 0.82vw, 24px);
 }
 
-.projects-grid > div {
+.projects-grid-div {
 	background: linear-gradient(90deg, rgba(150,200,255,1) 0%, rgba(111,160,233,1) 100%);
 }
 
@@ -190,6 +198,11 @@ body article {
 	padding-top: 10px;
 	text-align: center;
 	border-radius: 10px;
+	max-height: 45vh;
+}
+
+.projects-grid-div:nth-child(4) {
+	max-height: 200vh;
 }
 
 .projects-grid-div img {
@@ -201,7 +214,7 @@ body article {
 .open-code-div {
 	display: inline;
 	background: none;
-	color: rgba(0,0,150,1);
+	color: rgba(0,220,250,1);
 	cursor: pointer;
 }
 
@@ -239,6 +252,7 @@ body article {
 	opacity: 1;
 	visibility: visible;
 	height: auto;
+	max-height: auto;
 }
 
 
